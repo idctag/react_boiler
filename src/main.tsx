@@ -3,6 +3,7 @@ import { createRouter, RouterProvider } from '@tanstack/react-router';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from './components/theme-provider';
+import { Toaster } from './components/ui/sonner';
 import { routeTree } from './routeTree.gen';
 
 const router = createRouter({ routeTree });
@@ -28,6 +29,7 @@ if (!rootElement.innerHTML) {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
           <RouterProvider router={router} />
+          <Toaster />
         </ThemeProvider>
       </QueryClientProvider>
     </StrictMode>,

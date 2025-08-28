@@ -1,4 +1,6 @@
+import { useQuery } from '@tanstack/react-query';
 import { createFileRoute, useParams } from '@tanstack/react-router';
+import { fetchPostOptions } from '@/queries/post/options';
 
 export const Route = createFileRoute('/_dashboard/posts/$postId/')({
   component: RouteComponent,
@@ -7,6 +9,7 @@ export const Route = createFileRoute('/_dashboard/posts/$postId/')({
 
 function RouteComponent() {
   const { postId } = useParams({ from: '/_dashboard/posts/$postId' });
+  const { data } = useQuery(fetchPostOptions(postId));
 
-  return <div>Hello {postId}!</div>;
+  return <div>{JSON.stringify(data)}</div>;
 }
