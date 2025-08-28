@@ -14,10 +14,11 @@ export const Route = createFileRoute('/_dashboard/posts/')({
 
 function Posts() {
   const { data: posts, isLoading } = useQuery(fetchPostsOptions());
+
   const { mutate } = useMutation({
     mutationFn: (post: z.infer<typeof PostSchema>) => createPost(post),
     onSuccess: (createdPost) => {
-      toast('Success!');
+      toast.success('Success!');
       console.log(createdPost);
     },
   });
