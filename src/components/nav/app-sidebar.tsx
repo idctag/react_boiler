@@ -30,7 +30,7 @@ const data = {
   ],
   user: {
     name: 'ochir',
-    email: 'ochir@tanasoft.mn',
+    email: 'ochir.code@gmail.com',
     avatar: '#',
   },
 };
